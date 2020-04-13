@@ -11,14 +11,16 @@
     />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
     <style>
-    .markdown-section {
+      .markdown-section {
         margin: 0 auto;
         max-width: 100%;
         padding: 0 15px 40px;
         position: relative;
         height: 90vh;
-    }
-  </style>
+        /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 90);
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
@@ -28,6 +30,10 @@
         repo: "",
         loadSidebar: true
       };
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   </body>
