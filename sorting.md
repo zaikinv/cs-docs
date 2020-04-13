@@ -35,6 +35,8 @@ Avoid using because it is "array-like", if you really need use `...args` instead
 
 Allows to avoid using undeclared variables e.g. just writing `height = 50`
 
+<br /><br />
+
 # Sorting algorithms
 
 ## Bubble
@@ -210,3 +212,6 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
   return arr;
 }
 ```
+
+<br /><br />
+
