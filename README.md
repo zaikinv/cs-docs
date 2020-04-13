@@ -1,5 +1,16 @@
 # Theory
 
+## Time complexity (how long takes algorithm to run):
+
+- O(1) - function require 1 step (access, assignment)
+- O(n) - function require n steps
+- O(n²) - function require n² steps (nested loop)
+
+## Space complexity (how much space in memory does algorithm use):
+
+- O(1) - function allocates static number of variables (independent from input)
+- O(n) - function allocates dynamic number of variables (dependent from input)
+
 ## Global execution scope
 
 Environment created before any javacript code is executed, consists of:
@@ -35,7 +46,7 @@ Avoid using because it is "array-like", if you really need use `...args` instead
 
 Allows to avoid using undeclared variables e.g. just writing `height = 50`
 
-<br /><br />
+<br />
 
 # Sorting algorithms
 
@@ -213,4 +224,83 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
 }
 ```
 
-<br /><br />
+<br />
+
+# Search algorithms
+
+## Binary search
+
+!> on sorted array only
+
+define start, middle, end. Compare search term with middle: if they are not the same, redefine start, end and middle in the left or right part
+
+O(1) ... O(log n) because we always split into 2 recursively
+
+## String search
+
+go parallely along two words, break loop after first mismatching letter. After whole second word finished, increase counter by 1.
+
+# Problem solving patterns
+
+## Frequency counter pattern
+
+transform content of inputs into an Object to be able to quickly compare
+
+Input:
+
+- String
+- Array
+
+Example:
+
+- find out if 2 words are anagrams by counting letters frequency
+
+## Multiple pointers
+
+take two values at the beginning or end and move index to opposite direction based on condition
+
+Input:
+
+- String
+- Sorted array
+
+Example:
+
+- count unique values by moving along the Array
+
+## Sliding window
+
+take portion of input data and move it along the data
+
+Input:
+
+- String
+- Array
+- Size of the window
+
+Example:
+
+- find biggest sum of n given numbers
+
+## Divide and conquer
+
+take middle index of given data and compare with given value, take left or right and repeat
+
+Input:
+
+- sorted Array (of Strings, too)
+- Number
+
+Example:
+
+- find given number
+
+<br />
+
+# Solve problem
+
+- Undestand
+- Explore concrete examples
+- Break down to steps
+- Solve, simplify
+- Refactor
