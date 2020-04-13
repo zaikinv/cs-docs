@@ -240,6 +240,8 @@ O(1) ... O(log n) because we always split into 2 recursively
 
 go parallely along two words, break loop after first mismatching letter. After whole second word finished, increase counter by 1.
 
+<br />
+
 # Problem solving patterns
 
 ## Frequency counter pattern
