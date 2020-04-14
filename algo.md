@@ -25,6 +25,8 @@ function swap(arr, i, j) {
 }
 ```
 
+![](assets/bubble.gif)
+
 starting from first element compare couples and swap if necessary: every outer loop (going from end to start) will get one sorted item at the end.
 
 ```js
@@ -54,6 +56,8 @@ function swap(arr, i, j) {
 }
 ```
 
+![](assets/selection.gif)
+
 starting from first element (current, smallest) compare with the rest of array and found less than smallest, update smallest. At the end of inner loop swap current and smallest.
 
 ```js
@@ -75,6 +79,8 @@ function selectionSort(arr) {
 
 ## Insertion
 
+![](assets/insertion.gif)
+
 starting from second element (current), increase subarray (considered as fully sorted) loop backwards in the inner loop copying bigger values forward. At the end of the inner loop, replace first duplicate by current
 
 ```js
@@ -95,7 +101,7 @@ function insertionSort(arr) {
 
 ## Merge
 
-### Partition
+![](assets/merge.gif)
 
 scan two arrays in parallel, compare every two items and push smallest of two
 
@@ -128,8 +134,6 @@ function merge(arr1, arr2) {
 }
 ```
 
-### Sort
-
 find middle element, recursively assign `left` and `right` to result of `mergeSort` untill array size becomes 0 or 1, then initiate `merge`
 
 ```js
@@ -154,8 +158,6 @@ function swap(arr, i, j) {
 }
 ```
 
-### Partition
-
 scan array starting after pivot element (swapIdx = 0) and compare every item with pivot element, for every smaller element found: first increase swapIdx and then swap it with element at swapIdx. After loop, finally swap pivot with element at swap index.
 
 ```js
@@ -164,7 +166,7 @@ function pivot(arr, left, right) {
   let swapIndex = left;
 
   for (let i = left + 1; i <= right; i++) {
-    if (pivot > arr[i]) {
+    if (arr[i] < pivot) {
       swap(arr, ++swapIndex, i);
     }
   }
@@ -174,8 +176,6 @@ function pivot(arr, left, right) {
   return swapIndex;
 }
 ```
-
-### Sort
 
 recursively apply to parts before and after pivot element checking if `start` < `end`
 

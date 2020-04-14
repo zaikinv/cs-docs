@@ -38,10 +38,16 @@ Act of moving of `function` or `var` to the top of the scope.
 - `var` initialized with `undefined`
 - `let` and `const` declarations remain uninitialized
 
-## Why noy using `arguments`
+## IIFE
 
-Avoid using because it is "array-like", if you really need use `...args` instead (converts to array)
+Design pattern to avoid namespace collisions.
 
-## What is `'use strict'`
+- used before modules were introduced
+- E means Expression, declaration starts with `function() {}`
+- you can pass a param to avoid scope chain lookup
 
-Allows to avoid using undeclared variables e.g. just writing `height = 50`
+## this
+
+The object that the property or function is property of.
+
+- refers to what is left to the dot `'.'`
