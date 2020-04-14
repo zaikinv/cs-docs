@@ -158,6 +158,8 @@ function swap(arr, i, j) {
 }
 ```
 
+![](assets/quick.gif)
+
 scan array starting after pivot element (swapIdx = 0) and compare every item with pivot element, for every smaller element found: first increase swapIdx and then swap it with element at swapIdx. After loop, finally swap pivot with element at swap index.
 
 ```js
