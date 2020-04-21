@@ -207,3 +207,36 @@
    - adds parent's class `__proto__` to current class `__proto__`
 
    ![](assets/20200421124051.png)
+
+
+## Functional programming
+
+- keep data and operations separately
+
+## Pure function
+
+- no side effects
+
+- same input prduces same output
+
+- advantages:
+
+  - easy to test
+
+  - easy to compose
+
+  - avoid bugs
+
+- Perfect function:
+
+  - idempotent
+
+    - calling function several times does not change output, given same input
+
+  - declarative
+
+    - tell <u>what</u> to do, not <u>how</u>  
+
+  - immutable
+
+    -   
