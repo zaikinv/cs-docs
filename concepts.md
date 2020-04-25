@@ -106,9 +106,62 @@
 
 ## Currying
 
-- Partially giving a function the parameters
+- function with N params → function with 1 params
 
-  `const multiplyByTwo = multiply.bind(this, 2)`
+- transforms a function that accepts multiple arguments “all at once” into a series of function calls
+
+```js
+const normal = (a, b, c, d) => a + b + c + d
+
+const curried = (a) => (b) => (c) => (d) => a + b + c + d
+``` 
+
+- useful for FP to have less params for better composition and reuse
+
+  - you can pass more arguments to `const sum = (a, b) => a + b` and they will be ignored `sum(a, b, 'ignored')`, but how can you pass less?
+
+## Partial application
+
+- function with N params → function with M params
+
+- derive new function, with specific behavior, from general function
+
+```js
+const normal = (a, b, c, d) => a + b + c + d
+
+const partial = normal.bind(null, 1, 2, 3)
+```   
+
+## Memoization
+
+- caching result of function execution in function itself (more precisely, in closure)
+
+- closure with cache
+
+- params are cache's keys
+
+- improves performance  
+
+```js
+const normal = (n) => n * 2; 
+// normal(10);
+```   
+
+```js
+const memoized = (n) => {
+  let cache = {};
+  return function(n) {
+    if (n in cache) {
+      return cache[n];
+    } else {
+      const answer = n * 2;
+      cache[n] = answer;
+      return answer;
+    }
+  }
+}
+// memoized()(10);
+```
 
 ## First class citizens
 
@@ -136,7 +189,20 @@
 
 - uses for data privacy, keep "secret" data inside a function and only allow reading it via access methods
 
-![](assets/20200420092455.png)
+```js
+
+function a() {
+  let grandpa = 'grandpa'
+  return function b() {
+    let father = 'father'
+    let random = 4327493274233379 // garbage collected!
+    return function c() {
+      let son = 'son'
+      return `${grandpa} > ${father} > ${son}`
+    }
+  }
+}
+```
 
 ## Prototypal inheritance
 
@@ -146,19 +212,39 @@
 
 - top of the protypal chain is base `object` (not an `Object`)
 
+- advantages
+
+  - memory efficience (reuse methods instead of copying it)
+
 - create object from prototype (2 ways)
 
   - `Object.create( <Object> .prototype)`
 
-  ![](assets/20200420115549.png)
+```js
+const elfFunctions = attack() {
+  return 'attack'
+}
 
-  - `new <Object> ` ("constructor function")
+const newElf = Object.create(elfFunctions)
 
-  ![](assets/20200420115610.png)
+newElf.name = 'Alex'
+newElf.weapon = 'Hammer'
+```
 
-- advantages
+  - `new <Object>` ("constructor function")
 
-  - memory efficience (reuse methods instead of copying it)
+```js
+function Elf(name, weapon) {
+  this.name = name;
+  this.weapon = weapon;
+}
+
+Elf.prototype.attack = () => {
+  return 'attack'
+}
+
+const alex = new Elf('Alex', 'Hammer')
+```
 
 ## `new`
 
@@ -180,7 +266,7 @@
 
     - `this.name = "Dora"`
 
-  - returns `obj`   
+  - returns `obj`
 
 ## JavaScript types
 
@@ -200,18 +286,19 @@
 
 - `constructor`
 
-   - we are not including instance methods into constructor not to overload memory (when calling with `new Animal()` )
+  - we are not including instance methods into constructor not to overload memory (when calling with `new Animal()` )
 
 - `extends`
 
-   - adds parent's class `__proto__` to current class `__proto__`
+  - adds parent's class `__proto__` to current class `__proto__`
 
-   ![](assets/20200421124051.png)
-
+  ![](assets/20200421124051.png)
 
 ## Functional programming
 
 - keep data and operations separately
+
+- Keep functions small, pure and composable
 
 ## Pure function
 
@@ -227,16 +314,26 @@
 
   - avoid bugs
 
-- Perfect function:
+ ## Inheritance (Object Oriented Programming)
 
-  - idempotent
+- implemented via `Class` and `extend`
 
-    - calling function several times does not change output, given same input
+- stateful
 
-  - declarative
+  - functions live together with state in one class
 
-    - tell <u>what</u> to do, not <u>how</u>  
+- Problems
 
-  - immutable
+  - taxonomy should be perfectly designed in the beginning, otherwise hard to make changes to hierarchy
 
-    -   
+  - can lead to "gorilla-banana problem"
+
+  - tight coupling
+
+## Composition (Functional Programming)
+
+- implemented via `function`
+
+- stateless
+
+  - functions exist independently and can be reused everywhere    
