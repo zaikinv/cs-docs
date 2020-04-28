@@ -18,6 +18,66 @@
 
   - O(n) - function allocates dynamic number of variables (dependent from input)
 
+## Modules
+
+  - IIFE (old)
+
+    ```js
+    const module = (function(anotherObjectLoaded) {
+      // implementation
+      return {
+        doSomething: () => {}
+      }
+    })(window)
+    ```
+
+    ❌ still polluting global space
+
+    ❌ order matters
+
+  - CommonJS (mainly in Node)
+
+    ```js
+      const anotherModuleLoaded = require('module')
+      
+      module.exports = {
+        // implementation
+        doSomething: () => {}
+      }
+      ```
+      ❌ synchronously loaded
+
+  - AMD (asynchronous, used in Require.js)
+
+    ```js
+      define('module', [anotherModule], function(anotherModuleLoaded) {
+        // implementation
+        return {
+          doSomething: () => {}
+        }
+      })
+      ```
+
+      ❌ loader libraries are required (Require.js)
+
+  - UMD
+
+    - CommonJs + AMD + globar variable
+
+    - An `if-else` wrapper that provides module in format required by environment
+
+    ❌ boilerplate code
+
+  - ES6
+
+      ```js
+      import anotherModule from 'module';
+
+      const doSomething = () => {}
+
+      export default doSomething
+      ```  
+
 ## Global execution scope
 
 - Environment created before any javacript code is executed, consists of:
@@ -120,6 +180,18 @@ const curried = (a) => (b) => (c) => (d) => a + b + c + d
 
   - you can pass more arguments to `const sum = (a, b) => a + b` and they will be ignored `sum(a, b, 'ignored')`, but how can you pass less?
 
+- example: `log`
+
+```js
+const normal = (date, message) => alert(`${date} ${message}`)
+
+const curried = (date) => (message) => alert(`${date} ${message}`)
+
+const logNow = curried('now')
+
+logNow('message');
+``` 
+
 ## Partial application
 
 - function with N params → function with M params
@@ -162,6 +234,26 @@ const memoized = (n) => {
 }
 // memoized()(10);
 ```
+
+## Compose
+
+- FP technique to progressively process data by multiple functions ("conveyor")
+
+  ```js
+  const compose = (f1, f2) => (data) => f1(f2(data));
+
+  compose(param => param + 10, param => param * 10)(10) // 100
+  ```
+
+## Pipe
+
+- same as compose, just in different order
+
+  ```js
+  const pipe = (f1, f2) => (data) => f2(f1(data));
+
+  pipe(param => param + 10, param => param * 10)(10) // 200
+  ```
 
 ## First class citizens
 
@@ -337,3 +429,9 @@ const alex = new Elf('Alex', 'Hammer')
 - stateless
 
   - functions exist independently and can be reused everywhere    
+
+## Like about JS
+
+- can do both FP and OOP (Haskell + Java)
+
+- author of js wanted to have both from Java and Scheme programming languages
