@@ -10,7 +10,7 @@
 
 - All you need to know about
 
-  - [Core concepts](theory/scope.md) (Closure, Hoisting, IIFE, `this`, `call` vs `bind` vs `apply`)
+  - [Core concepts](theory/core.md) (Closure, Hoisting, IIFE, `this`, `call` vs `bind` vs `apply`)
   - [Scope](theory/scope.md) (Global, Static, Dynamic)
   - [Prototypal Inheritance](theory/prototypal-inheritance.md)
   - [OOP](theory/oop.md)
