@@ -59,13 +59,21 @@ function a() {
 
   - can be used for method borrowing, arguments are coma-separated
 
-  - `originalObject.method.call(targetObject, argument1, argument2, ...)`
+  ```js
+  
+  originalObject.method.call(targetObject, argument1, argument2, ...)
+  
+  ```
 
 - `apply`
 
   - can be used for method borrowing, arguments are in `Array`
 
-  - `originalObject.method.call(targetObject, [argument1, argument2, ... ])`
+  ```js
+  
+  originalObject.method.apply(targetObject, [argument1, argument2, ... ])
+  
+  ```
 
 - `bind`
 
@@ -73,4 +81,10 @@ function a() {
 
   - allows to store in function for future use
 
-  - `const method = originalObject.method.bind(targetObject, argument1, argument2, ...);`
+  ```js
+  
+  const method = originalObject.method.bind(targetObject, argument1, argument2, ...)
+  
+  ```
+  
+  
