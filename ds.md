@@ -1,4 +1,4 @@
-# Singly linked list
+## Singly linked list
 
 ![](assets/2020-05-02_18h15_59.jpg)
 
@@ -29,7 +29,7 @@ class SinglyLinkedList {
 - build Stack and Queue
 - undo functionality in programs
 
-# Doubly linked list
+## Doubly linked list
 
 ![](assets/2020-05-02_18h17_40.jpg)
 
@@ -61,7 +61,7 @@ class SinglyLinkedList {
 - browser history
 - undo and redo functionality in programs
 
-# Stack
+## Stack
 
 ![](assets/stack.jpg)
 
@@ -78,7 +78,7 @@ class SinglyLinkedList {
 - undo/redo in Photoshop
 - routing in javascript frameworks
 
-# Queue (FIFO)
+## Queue (FIFO)
 
 ![](assets/queue.jpg)
 
@@ -93,7 +93,7 @@ class SinglyLinkedList {
 
 - printing
 
-# Graph
+## Graph
 
 | Adjacency List                     | Adjacency Matrix                   |
 | ---------------------------------- | ---------------------------------- |
