@@ -69,8 +69,9 @@ class SinglyLinkedList {
 
 - via Array
 - via Singly Linked List
-  - `pop()` via `push()`
   - `push()` via `unshift()`
+  - `pop()` via `shift()`
+
 
 #### Usage
 
