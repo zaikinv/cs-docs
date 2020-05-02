@@ -79,7 +79,7 @@ class SinglyLinkedList {
 - undo/redo in Photoshop
 - routing in javascript frameworks
 
-## Queue (FIFO)
+## Queue
 
 ![](assets/queue.jpg)
 
