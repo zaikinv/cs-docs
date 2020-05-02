@@ -2,7 +2,7 @@
 
 ![](assets/2020-05-02_18h15_59.jpg)
 
-### Implementation
+#### Implementation
 
 ```js
 class Node {
@@ -24,7 +24,7 @@ class SinglyLinkedList {
 }
 ```
 
-### Usage
+#### Usage
 
 - build Stack and Queue
 - undo functionality in programs
@@ -33,7 +33,7 @@ class SinglyLinkedList {
 
 ![](assets/2020-05-02_18h17_40.jpg)
 
-### Implementation
+#### Implementation
 
 ```js
 class Node {
@@ -56,7 +56,7 @@ class SinglyLinkedList {
 }
 ```
 
-### Usage
+#### Usage
 
 - browser history
 - undo and redo functionality in programs
@@ -65,14 +65,14 @@ class SinglyLinkedList {
 
 ![](assets/stack.jpg)
 
-### Implementation
+#### Implementation
 
 - via Array
 - via Singly Linked List
   - `pop()` via `push()`
   - `push()` via `unshift()`
 
-### Usage
+#### Usage
 
 - javascript call stack
 - undo/redo in Photoshop
@@ -82,14 +82,14 @@ class SinglyLinkedList {
 
 ![](assets/queue.jpg)
 
-### Implementation
+#### Implementation
 
 - via Array
 - via Singly Linked List
   - `enqueue()` via `push()`
   - `dequeue()` via `shift()`
 
-### Usage
+#### Usage
 
 - printing
 
