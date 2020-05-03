@@ -20,7 +20,7 @@ class SinglyLinkedList {
     this.tail = null;
     this.length = 0;
   }
-   /* 
+   /*
    * get, set
    * push, pop
    * shift, unshift
@@ -56,7 +56,7 @@ class DoublyLinkedList {
     this.tail = null;
     this.length = 0;
   }
-  /* 
+  /*
    * get, set
    * push, pop
    * shift, unshift
@@ -77,9 +77,10 @@ class DoublyLinkedList {
 
 - via Array
 - via Singly Linked List
+
   - `push()` via `unshift()`
   - `pop()` via `shift()`
-  
+
 ![](assets/unshift-shift.gif)
 
 #### Usage
@@ -124,13 +125,14 @@ class BinarySearchTree {
   constructor() {
     this.root = null;
   }
-  /* 
-   * insert, find, contains 
+  /*
+   * insert, find, contains
    * bfs, dfs
    * preOrder, postOrder, inOrder
    * /
 }
 ```
+
 #### BFS
 
 ![](assets/bfs.gif)
@@ -146,10 +148,6 @@ class BinarySearchTree {
 #### DFS In Order
 
 ![](assets/inorder.gif)
-
-#### Usage
-
-- printing
 
 ## Graph
 
