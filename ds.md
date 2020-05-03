@@ -137,15 +137,15 @@ class BinarySearchTree {
 
 #### DFS Pre Order
 
-![](assets/preOrder.gif)
+![](assets/preorder.gif)
 
 #### DFS Post Order
 
-![](assets/postOrder.gif)
+![](assets/postorder.gif)
 
 #### DFS In Order
 
-![](assets/inOrder.gif)
+![](assets/inorder.gif)
 
 #### Usage
 
