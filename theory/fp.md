@@ -1,13 +1,21 @@
 
-# Theory
+### Theory
 
-## Functional programming
+#### Composition
+
+- implemented via `function`
+
+- stateless
+
+  - functions exist independently and can be reused everywhere  
+
+#### Functional programming
 
 - keep data and operations separately
 
 - Keep functions small, pure and composable
 
-## Pure function
+#### Pure function
 
 - no side effects
 
@@ -21,7 +29,7 @@
 
   - avoid bugs
 
-## First class citizens
+#### First class citizens
 
 - simply means “being able to do what everyone else can do”
 
@@ -33,13 +41,13 @@
 
 - basis for functional programming
 
-## Higher order function
+#### Higher order function
 
 - function that not only accept data, but what to do (function)
 
-# Techniques
+## Techniques
 
-## Currying
+#### Currying
 
 - function with N params → function with 1 params
 
@@ -67,7 +75,7 @@ const logNow = curried('now')
 logNow('message');
 ``` 
 
-## Partial application
+#### Partial application
 
 - function with N params → function with M params
 
@@ -79,7 +87,7 @@ const normal = (a, b, c, d) => a + b + c + d
 const partial = normal.bind(null, 1, 2, 3)
 ```   
 
-## Memoization
+#### Memoization
 
 - caching result of function execution in function itself (more precisely, in closure)
 
@@ -110,7 +118,7 @@ const memoized = (n) => {
 // memoized()(10);
 ```
 
-## Compose
+#### Compose
 
 - FP technique to progressively process data by multiple functions ("conveyor")
 
@@ -120,7 +128,7 @@ const memoized = (n) => {
   compose(param => param + 10, param => param * 10)(10) // 100
   ```
 
-## Pipe
+#### Pipe
 
 - same as compose, just in different order
 

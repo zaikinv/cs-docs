@@ -1,3 +1,37 @@
+#### Global execution scope
+
+- Environment created before any javacript code is executed, consists of:
+
+  - global `window` or `global` (Node.js) object
+
+  - `this` object (equal to `window` or `global`)
+
+  - `arguments` object
+
+  - variable environment (all variable declarations)
+
+#### Static (lexical) scope
+
+- write-time (detrmines variables solely based on their textual position in our code)
+
+- based on nesting of scope
+
+- the scope that can be determined statically at a write time
+
+- only created when you create a new function (`{}`)
+
+- extended by parent lexical scope walking up scope chain until global execution context
+
+- can be accessed by `[[Scopes]]`
+
+#### Dynamic scope
+
+- run-time
+
+- based on callstack
+
+- the scope that can be determined dynamicaly at a runtime
+
 #### Closure
 
 - function with reference to its lexical scope
@@ -45,7 +79,7 @@ function a() {
 
   - you can pass a param to avoid scope chain lookup
 
-#### `this`
+#### Keyword `this`
 
 - The object that the property or function is property of.
 
@@ -53,9 +87,7 @@ function a() {
 
   - the value of `this` can be determined by answering the question _"who called the function?"_
 
-#### `call`, `bind`, `apply`
-
-- `call`
+#### Keyword `call`
 
   - can be used for method borrowing, arguments are coma-separated
 
@@ -65,7 +97,7 @@ function a() {
   
   ```
 
-- `apply`
+#### Keyword `apply`
 
   - can be used for method borrowing, arguments are in `Array`
 
@@ -75,7 +107,7 @@ function a() {
   
   ```
 
-- `bind`
+#### Keyword `bind`
 
   - returns new function unlinke `call` or `apply`
 

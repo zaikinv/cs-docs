@@ -10,14 +10,16 @@
 
 - All you need to know about
 
-  - [Core concepts](theory/core.md) (Closure, Hoisting, IIFE, `this`, `call` vs `bind` vs `apply`)
-  - [Scope](theory/scope.md) (Global, Static, Dynamic)
-  - [Prototypal Inheritance](theory/prototypal-inheritance.md)
-  - [OOP](theory/oop.md)
+  - [Core concepts](theory/core.md) (Global scope, Static scope, Dynamic scope, Closure, Hoisting, IIFE, `this`, `call`, `bind`, `apply`)
+
+  - [Prototypal inheritance and OOP](theory/oop-proto-inheritance.md)
+
   - [Functional Programming](theory/fp.md)
-  - [OOP vs FP](theory/oop-vs-fp.md)
+  
   - [Asynchronous programming](theory/async.md)
+
   - [Errors](theory/errors.md)
+  
   - [Modules](theory/modules.md)
 
 - JavaScript types

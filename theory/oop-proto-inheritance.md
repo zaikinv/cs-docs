@@ -1,4 +1,5 @@
-## Prototypal inheritance
+
+#### Prototypal inheritance
 
 - programming paradigm when objects directly inherit from another objects (unlike OOP where classes inherit from classes)
 
@@ -40,7 +41,7 @@ Elf.prototype.attack = () => {
 const alex = new Elf('Alex', 'Hammer')
 ```
 
-## `new`
+#### Keyword `new`
 
 - suppose we have a constructor function
 
@@ -60,4 +61,32 @@ const alex = new Elf('Alex', 'Hammer')
 
     - `this.name = "Dora"`
 
-  - returns `obj`
+  - returns `obj`   
+ 
+ #### Inheritance
+ 
+- implemented via `Class` and `extend`
+
+- stateful
+
+  - functions live together with state in one class
+
+- Problems
+
+  - taxonomy should be perfectly designed in the beginning, otherwise hard to make changes to hierarchy
+
+  - can lead to "gorilla-banana problem"
+
+  - tight coupling
+
+ #### Class
+
+- syntactic sugar on top of prototypal inheritance
+
+- `constructor`
+
+  - we are not including instance methods into constructor not to overload memory (when calling with `new Animal()` )
+
+- `extends`
+
+  - adds parent's class `__proto__` to current class `__proto__`
