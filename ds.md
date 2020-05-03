@@ -133,9 +133,32 @@ class BinarySearchTree {
 }
 ```
 
-#### BFS
+### BFS
 
 ![](assets/bfs.gif)
+
+#### Implementation
+
+```js
+bfs() {
+
+  let node = this.root;
+  const result = [];
+  const queue = [node];
+
+  while (queue.length) {
+    node = queue.shift();
+    result.push(node.val);
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+
+  return result;
+
+}
+```
+
+#### DFS
 
 #### DFS Pre Order
 
