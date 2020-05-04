@@ -181,11 +181,11 @@ dfs() {
   const result = [];
 
   function traverse(node) {
-    // result.push(node.val); ⭠ pre-order
+    // result.push(node.val); -> pre-order
     if (node.left) traverse(node.left);
-    // result.push(node.val); ⭠ in-order
+    // result.push(node.val); -> in-order
     if (node.right) traverse(node.right);
-    // result.push(node.val); ⭠ post-order
+    // result.push(node.val); -> post-order
   };
 
   traverse(this.root);

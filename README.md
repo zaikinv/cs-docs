@@ -1,11 +1,13 @@
 - General
 
   - [Interview strategy](strategy.md)
+
   - [Big O](theory/big-o.md)
 
 - Algorithms and data strucutres
 
   - [Algorithms](algo.md)
+  
   - [Data strucutres](ds.md)
 
 - All you need to know about
