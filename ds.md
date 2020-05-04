@@ -139,6 +139,8 @@ class BinarySearchTree {
 
 #### Implementation
 
+- based on Queue
+
 ```js
 bfs() {
 
@@ -147,7 +149,7 @@ bfs() {
   const queue = [node];
 
   while (queue.length) {
-    node = queue.shift();
+    node = queue.shift(); 
     result.push(node.val);
     if (node.left) queue.push(node.left);
     if (node.right) queue.push(node.right);
@@ -156,21 +158,49 @@ bfs() {
   return result;
 
 }
+
+var tree = new BinarySearchTree();
+
+tree.insert(10);
+// insert more...
+
+tree.bfs(); 
 ```
 
 #### DFS
 
-#### DFS Pre Order
-
-![](assets/preorder.gif)
-
-#### DFS Post Order
-
-![](assets/postorder.gif)
-
-#### DFS In Order
-
 ![](assets/inorder.gif)
+
+#### Implementation
+
+- based on recursion
+
+```js
+dfs() {
+
+  const result = [];
+
+  function traverse(node) {
+    // result.push(node.val); ⭠ pre-order
+    if (node.left) traverse(node.left);
+    // result.push(node.val); ⭠ in-order
+    if (node.right) traverse(node.right);
+    // result.push(node.val); ⭠ post-order
+  };
+
+  traverse(this.root);
+
+  return result;
+
+}
+
+var tree = new BinarySearchTree();
+
+tree.insert(10);
+// insert more...
+
+tree.dfs(); 
+```
 
 ## Graph
 

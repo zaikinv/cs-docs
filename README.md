@@ -17,8 +17,6 @@
   - [Functional Programming](theory/fp.md)
   
   - [Asynchronous programming](theory/async.md)
-
-  - [Errors](theory/errors.md)
   
   - [Modules](theory/modules.md)
 
@@ -34,3 +32,7 @@
 
   - can do both FP and OOP (Haskell + Java)
   - author of js wanted to have both from Java and Scheme programming languages
+
+- How Javascript Engine works
+
+![](assets/js.gif)

@@ -90,3 +90,7 @@ const alex = new Elf('Alex', 'Hammer')
 - `extends`
 
   - adds parent's class `__proto__` to current class `__proto__`
+
+#### How extends work
+
+![](../assets/20200421124051.png)
