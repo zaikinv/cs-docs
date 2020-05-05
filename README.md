@@ -7,8 +7,8 @@
 - Algorithms and data strucutres
 
   - [Algorithms](algo.md)
-  
-  - [Data strucutres](ds.md)
+
+  - [Data structures](ds.md)
 
 - All you need to know about
 

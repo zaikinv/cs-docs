@@ -2,7 +2,9 @@
 
 ![](assets/2020-05-02_18h15_59.jpg)
 
-#### Implementation
+
+<details>
+<summary>Implementation</summary>
 
 ```js
 class Node {
@@ -28,6 +30,8 @@ class SinglyLinkedList {
 }
 ```
 
+</details>
+
 #### Usage
 
 - build Stack and Queue
@@ -37,7 +41,8 @@ class SinglyLinkedList {
 
 ![](assets/2020-05-02_18h17_40.jpg)
 
-#### Implementation
+<details>
+<summary>Implementation</summary>
 
 ```js
 class Node {
@@ -63,6 +68,8 @@ class DoublyLinkedList {
    * /
 }
 ```
+</details>
+
 
 #### Usage
 
@@ -73,7 +80,8 @@ class DoublyLinkedList {
 
 ![](assets/stack.jpg)
 
-#### Implementation
+<details>
+<summary>Implementation</summary>
 
 - via Array
 - via Singly Linked List
@@ -82,6 +90,9 @@ class DoublyLinkedList {
   - `pop()` via `shift()`
 
 ![](assets/unshift-shift.gif)
+
+</details>
+
 
 #### Usage
 
@@ -93,7 +104,8 @@ class DoublyLinkedList {
 
 ![](assets/queue.jpg)
 
-#### Implementation
+<details>
+<summary>Implementation</summary>
 
 - via Array
 - via Singly Linked List
@@ -102,13 +114,23 @@ class DoublyLinkedList {
 
 ![](assets/push-shift.gif)
 
+</details>
+
+
 #### Usage
 
 - printing
 
 ## Binary search tree
 
-#### Implementation
+![](assets/search-create-bst.jpg)
+
+- from 0 to 2 children per node
+- every left node is less than parent
+- every right node is greater than parent
+
+<details>
+<summary>Implementation</summary>
 
 ```js
 class Node {
@@ -133,13 +155,67 @@ class BinarySearchTree {
 }
 ```
 
-### BFS
+Example
+
+```js
+{
+  "root": {
+    "value": 10,
+    "left": {
+      "value": 6,
+      "left": {
+        "value": 3,
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "value": 8,
+        "left": null,
+        "right": null
+      }
+    },
+    "right": {
+      "value": 15,
+      "left": null,
+      "right": {
+        "value": 20,
+        "left": null,
+        "right": null
+      }
+    }
+  }
+}
+```
+</details>
+
+#### Usage
+
+- database indexing and search
+- Huffman coding algorithm (file compression)
+- much faster than `Array` at search, insert, and delete (does not store indices unlike `Array`)
+  - Array O(n)
+  - BST O(log n)
+- mcuh slower than `Array` at access
+  - Array O(1)
+  - BST O(log n)
+- Array can be converted to BST
+
+```js
+var tree = new BinarySearchTree();
+
+[14, 25, 54, 12, 66].forEach((value) => tree.insert(value));
+```
+
+## BFS
 
 ![](assets/bfs.gif)
 
-#### Implementation
+<details>
+<summary>Implementation</summary>
 
 - based on Queue
+- can be applied to any Binary Tree
+  - because of `node.left` and `node.right`
 
 ```js
 bfs() {
@@ -149,7 +225,7 @@ bfs() {
   const queue = [node];
 
   while (queue.length) {
-    node = queue.shift(); 
+    node = queue.shift();
     result.push(node.val);
     if (node.left) queue.push(node.left);
     if (node.right) queue.push(node.right);
@@ -164,14 +240,21 @@ var tree = new BinarySearchTree();
 tree.insert(10);
 // insert more...
 
-tree.bfs(); 
+tree.bfs();
 ```
+</details>
 
-#### DFS
+
+#### Usage
+
+- best for deep tree
+
+## DFS
 
 ![](assets/inorder.gif)
 
-#### Implementation
+<details>
+<summary>Implementation</summary>
 
 - based on recursion
 
@@ -199,8 +282,13 @@ var tree = new BinarySearchTree();
 tree.insert(10);
 // insert more...
 
-tree.dfs(); 
+tree.dfs();
 ```
+</details>
+
+#### Usage
+
+- best for wide tree
 
 ## Graph
 
