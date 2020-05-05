@@ -2,7 +2,6 @@
 
 ![](assets/2020-05-02_18h15_59.jpg)
 
-
 <details>
 <summary>Implementation</summary>
 
@@ -68,8 +67,8 @@ class DoublyLinkedList {
    * /
 }
 ```
-</details>
 
+</details>
 
 #### Usage
 
@@ -93,7 +92,6 @@ class DoublyLinkedList {
 
 </details>
 
-
 #### Usage
 
 - javascript call stack
@@ -116,7 +114,6 @@ class DoublyLinkedList {
 
 </details>
 
-
 #### Usage
 
 - printing
@@ -124,10 +121,6 @@ class DoublyLinkedList {
 ## Binary search tree
 
 ![](assets/search-create-bst.jpg)
-
-- from 0 to 2 children per node
-- every left node is less than parent
-- every right node is greater than parent
 
 <details>
 <summary>Implementation</summary>
@@ -186,19 +179,20 @@ Example
   }
 }
 ```
+
 </details>
 
 #### Usage
 
 - database indexing and search
 - Huffman coding algorithm (file compression)
+- Array can be converted to BST
 - much faster than `Array` at search, insert, and delete (does not store indices unlike `Array`)
   - Array O(n)
   - BST O(log n)
 - mcuh slower than `Array` at access
   - Array O(1)
   - BST O(log n)
-- Array can be converted to BST
 
 ```js
 var tree = new BinarySearchTree();
@@ -242,8 +236,8 @@ tree.insert(10);
 
 tree.bfs();
 ```
-</details>
 
+</details>
 
 #### Usage
 
@@ -284,6 +278,7 @@ tree.insert(10);
 
 tree.dfs();
 ```
+
 </details>
 
 #### Usage
