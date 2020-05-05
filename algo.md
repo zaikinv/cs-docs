@@ -1,5 +1,3 @@
-# Search algorithms
-
 ## Binary search
 
 !> on sorted array only
@@ -12,12 +10,7 @@ O(1) ... O(log n) because we always split into 2 recursively
 
 go parallely along two words, break loop after first mismatching letter. After whole second word finished, increase counter by 1.
 
-<br/>
-<br/>
-
-# Sorting algorithms
-
-## Bubble
+## Bubble sort
 
 ```js
 function swap(arr, i, j) {
@@ -48,7 +41,7 @@ function bubbleSort(arr) {
 }
 ```
 
-## Selection
+## Selection sort
 
 ```js
 function swap(arr, i, j) {
@@ -77,7 +70,7 @@ function selectionSort(arr) {
 }
 ```
 
-## Insertion
+## Insertion sort
 
 ![](assets/insertion.gif)
 
@@ -99,7 +92,7 @@ function insertionSort(arr) {
 }
 ```
 
-## Merge
+## Merge sort
 
 ![](assets/merge.gif)
 
@@ -150,7 +143,7 @@ function mergeSort(arr) {
 }
 ```
 
-## Quick
+## Quick sort
 
 ```js
 function swap(arr, i, j) {

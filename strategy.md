@@ -1,16 +1,10 @@
-
-# Solve problem
+## Solve problem
 
 - Undestand
 - Explore concrete examples
 - Break down to steps
 - Solve, simplify
 - Refactor
-
-<br/>
-<br/>
-
-# Problem solving patterns
 
 ## Frequency counter pattern
 

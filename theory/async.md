@@ -1,6 +1,4 @@
-#### Asynchronous programming
-
-#### Keyword `async`
+## Keyword `async`
 
 ![](../assets/async-await.jpg)
 
@@ -8,7 +6,7 @@
 
 - allows `await` to be used in it
 
-#### Error handling
+## Error handling
 
 ```js
 async function getData() {
@@ -22,7 +20,7 @@ async function getData() {
 getData();
 ```
 
-#### Keywords `await for ... of`
+## Keywords `await for ... of`
 
 ```js
 async function getData() {
@@ -41,7 +39,7 @@ async function getData() {
 getData();
 ```
 
-#### Parallel
+## Parallel
 
 ```js
 async function parallel() {
@@ -59,7 +57,7 @@ async function parallel() {
 parallel().then(console.log)
 ```
 
-#### Race
+## Race
 
 ```js
 async function race() {
@@ -77,7 +75,7 @@ async function race() {
 race().then(console.log)
 ```
 
-#### Sequence
+## Sequence
 
 ```js
 async function sequence() {

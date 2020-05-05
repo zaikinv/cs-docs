@@ -1,4 +1,4 @@
-#### Global execution scope
+## Global execution scope
 
 - Environment created before any javacript code is executed, consists of:
 
@@ -10,7 +10,7 @@
 
   - variable environment (all variable declarations)
 
-#### Static (lexical) scope
+## Static (lexical) scope
 
 - write-time (detrmines variables solely based on their textual position in our code)
 
@@ -24,7 +24,7 @@
 
 - can be accessed by `[[Scopes]]`
 
-#### Dynamic scope
+## Dynamic scope
 
 - run-time
 
@@ -32,7 +32,7 @@
 
 - the scope that can be determined dynamicaly at a runtime
 
-#### Closure
+## Closure
 
 - function with reference to its lexical scope
 
@@ -57,7 +57,7 @@ function a() {
 }
 ```
 
-#### Hoisting
+## Hoisting
 
 - Act of moving of `function` or `var` to the top of the scope.
 
@@ -69,7 +69,7 @@ function a() {
 
   - `let` and `const` declarations remain uninitialized
 
-#### IIFE
+## IIFE
 
 - Design pattern to avoid namespace collisions.
 
@@ -79,7 +79,7 @@ function a() {
 
   - you can pass a param to avoid scope chain lookup
 
-#### Keyword `this`
+## Keyword `this`
 
 - The object that the property or function is property of.
 
@@ -87,7 +87,7 @@ function a() {
 
   - the value of `this` can be determined by answering the question _"who called the function?"_
 
-#### Keyword `call`
+## Keyword `call`
 
   - can be used for method borrowing, arguments are coma-separated
 
@@ -97,7 +97,7 @@ function a() {
   
   ```
 
-#### Keyword `apply`
+## Keyword `apply`
 
   - can be used for method borrowing, arguments are in `Array`
 
@@ -107,7 +107,7 @@ function a() {
   
   ```
 
-#### Keyword `bind`
+## Keyword `bind`
 
   - returns new function unlinke `call` or `apply`
 

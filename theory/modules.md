@@ -1,59 +1,58 @@
-#### Modules
+## IIFE (old)
 
-  - IIFE (old)
+```js
+const module = (function (anotherObjectLoaded) {
+  // implementation
+  return {
+    doSomething: () => {},
+  };
+})(window);
+```
 
-    ```js
-    const module = (function(anotherObjectLoaded) {
-      // implementation
-      return {
-        doSomething: () => {}
-      }
-    })(window)
-    ```
+❌ still polluting global space
 
-    ❌ still polluting global space
+❌ order matters
 
-    ❌ order matters
+## CommonJS (mainly in Node)
 
-  - CommonJS (mainly in Node)
+```js
+const anotherModuleLoaded = require("module");
 
-    ```js
-      const anotherModuleLoaded = require('module')
-      
-      module.exports = {
-        // implementation
-        doSomething: () => {}
-      }
-      ```
-      ❌ synchronously loaded
+module.exports = {
+  // implementation
+  doSomething: () => {},
+};
+```
 
-  - AMD (asynchronous, used in Require.js)
+❌ synchronously loaded
 
-    ```js
-      define('module', [anotherModule], function(anotherModuleLoaded) {
-        // implementation
-        return {
-          doSomething: () => {}
-        }
-      })
-      ```
+## AMD (asynchronous, used in Require.js)
 
-      ❌ loader libraries are required (Require.js)
+```js
+define("module", [anotherModule], function (anotherModuleLoaded) {
+  // implementation
+  return {
+    doSomething: () => {},
+  };
+});
+```
 
-  - UMD
+❌ loader libraries are required (Require.js)
 
-    - CommonJs + AMD + globar variable
+## UMD
 
-    - An `if-else` wrapper that provides module in format required by environment
+- CommonJs + AMD + globar variable
 
-    ❌ boilerplate code
+- An `if-else` wrapper that provides module in format required by environment
 
-  - ES6
+❌ boilerplate code
 
-      ```js
-      import anotherModule from 'module';
+## ES6
 
-      const doSomething = () => {}
+```js
+import anotherModule from "module";
 
-      export default doSomething
-      ```  
+const doSomething = () => {};
+
+export default doSomething;
+```
