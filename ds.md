@@ -120,7 +120,7 @@ class DoublyLinkedList {
 
 ## Binary search tree
 
-![](assets/search-create-bst.jpg)
+![](assets/bst.jpg)
 
 <details>
 <summary>Implementation</summary>
@@ -147,6 +147,8 @@ class BinarySearchTree {
    * /
 }
 ```
+
+![](assets/search-create-bst.jpg)
 
 Example
 
@@ -194,96 +196,68 @@ Example
   - Array O(1)
   - BST O(log n)
 
-```js
-var tree = new BinarySearchTree();
+## Hash table
 
-[14, 25, 54, 12, 66].forEach((value) => tree.insert(value));
-```
-
-## BFS
-
-![](assets/bfs.gif)
+![](assets/hash2.jpg)
 
 <details>
 <summary>Implementation</summary>
 
-- based on Queue
-- can be applied to any Binary Tree
-  - because of `node.left` and `node.right`
+![](assets/hash.jpg)
+
+Example
 
 ```js
-bfs() {
+const hashTable = {
+  keyMap: [
+    null, 
+    [['Sue', 'F'], ['Nell', 'F']], 
+    null,
+    [['Joe', 'M'], ['Ally', 'F'], ['Bob', 'M']],
+    [['Dan', 'M']]
+  ];
+}
+```
 
-  let node = this.root;
-  const result = [];
-  const queue = [node];
-
-  while (queue.length) {
-    node = queue.shift();
-    result.push(node.val);
-    if (node.left) queue.push(node.left);
-    if (node.right) queue.push(node.right);
+```js
+class HashTable {
+  constructor(size = 5) {
+    this.keyMap = new Array(size);
+    // this = { keyMap: [ , , , , ] }
   }
 
-  return result;
+  _hash(key) {
+    // return 3
+  }
 
+  set(key, value) {
+    // [ , , [ 'Joe', 'M' ] , , ]
+  }
+
+  get(key) {
+    // "M"
+  }
 }
 
-var tree = new BinarySearchTree();
+let ht = new HashTable(5);
 
-tree.insert(10);
-// insert more...
-
-tree.bfs();
+ht.set("Joe", "M");
+// add more...
 ```
 
 </details>
 
 #### Usage
 
-- best for deep tree
-
-## DFS
-
-![](assets/inorder.gif)
-
-<details>
-<summary>Implementation</summary>
-
-- based on recursion
-
-```js
-dfs() {
-
-  const result = [];
-
-  function traverse(node) {
-    // result.push(node.val); -> pre-order
-    if (node.left) traverse(node.left);
-    // result.push(node.val); -> in-order
-    if (node.right) traverse(node.right);
-    // result.push(node.val); -> post-order
-  };
-
-  traverse(this.root);
-
-  return result;
-
-}
-
-var tree = new BinarySearchTree();
-
-tree.insert(10);
-// insert more...
-
-tree.dfs();
-```
-
-</details>
-
-#### Usage
-
-- best for wide tree
+- efficiently lookup without relying on a linear search
+- much faster than `Array` at search, insert, and delete
+  - Array O(n)
+  - Hash Table O(1)
+- search citizen passport record by ID
+  - Array
+    - check every ID starting from `1` untill, let's say, `9999`
+  - Hash Table
+    - convert `Vladimir Putin` to `1002` and directly access it
 
 ## Graph
 
