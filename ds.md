@@ -2,13 +2,33 @@
 
 ![](assets/2020-05-02_18h15_59.jpg)
 
+```js
+const singlyLinkedList = {
+  head: {
+    value: 12,
+    next: {
+      value: 99,
+      next: {
+        value: 37,
+        next: null,
+      },
+    },
+  },
+  tail: {
+    value: 37,
+    next: null,
+  },
+  length: 3,
+};
+```
+
 <details>
 <summary>Implementation</summary>
 
 ```js
 class Node {
-  constructor(val) {
-    this.val = val;
+  constructor(value) {
+    this.value = value;
     this.next = null;
   }
 }
@@ -31,14 +51,49 @@ class SinglyLinkedList {
 
 </details>
 
-#### Usage
+<details>
+<summary>Usage</summary>
 
 - build Stack and Queue
 - undo functionality in programs
 
+</details>
+
 ## Doubly linked list
 
 ![](assets/2020-05-02_18h17_40.jpg)
+
+```js
+const doublyLinkedList = {
+  head: {
+    value: 12,
+    next: {
+      value: 99,
+      next: {
+        value: 37,
+        next: null,
+        prev: "[Circular]",
+      },
+      prev: "[Circular]",
+    },
+    prev: null,
+  },
+  tail: {
+    value: 37,
+    next: null,
+    prev: {
+      value: 99,
+      next: "[Circular]",
+      prev: {
+        value: 12,
+        next: "[Circular]",
+        prev: null,
+      },
+    },
+  },
+  length: 3,
+};
+```
 
 <details>
 <summary>Implementation</summary>
@@ -70,14 +125,21 @@ class DoublyLinkedList {
 
 </details>
 
-#### Usage
+<details>
+<summary>Usage</summary>
 
 - browser history
 - undo and redo functionality in programs
 
+</details>
+
 ## Stack
 
 ![](assets/stack.jpg)
+
+```js
+const stack = [12, 99, 37];
+```
 
 <details>
 <summary>Implementation</summary>
@@ -92,15 +154,22 @@ class DoublyLinkedList {
 
 </details>
 
-#### Usage
+<details>
+<summary>Usage</summary>
 
 - javascript call stack
 - undo/redo in Photoshop
 - routing in javascript frameworks
 
+</details>
+
 ## Queue
 
 ![](assets/queue.jpg)
+
+```js
+const queue = [12, 99, 37];
+```
 
 <details>
 <summary>Implementation</summary>
@@ -114,13 +183,46 @@ class DoublyLinkedList {
 
 </details>
 
-#### Usage
+<details>
+<summary>Usage</summary>
 
 - printing
+
+</details>
 
 ## Binary search tree
 
 ![](assets/bst.jpg)
+
+```js
+const binarySearchTree = {
+  root: {
+    value: 10,
+    left: {
+      value: 6,
+      left: {
+        value: 3,
+        left: null,
+        right: null,
+      },
+      right: {
+        value: 8,
+        left: null,
+        right: null,
+      },
+    },
+    right: {
+      value: 15,
+      left: null,
+      right: {
+        value: 20,
+        left: null,
+        right: null,
+      },
+    },
+  },
+};
+```
 
 <details>
 <summary>Implementation</summary>
@@ -150,41 +252,10 @@ class BinarySearchTree {
 
 ![](assets/search-create-bst.jpg)
 
-Example
-
-```js
-{
-  "root": {
-    "value": 10,
-    "left": {
-      "value": 6,
-      "left": {
-        "value": 3,
-        "left": null,
-        "right": null
-      },
-      "right": {
-        "value": 8,
-        "left": null,
-        "right": null
-      }
-    },
-    "right": {
-      "value": 15,
-      "left": null,
-      "right": {
-        "value": 20,
-        "left": null,
-        "right": null
-      }
-    }
-  }
-}
-```
-
 </details>
 
-#### Usage
+<details>
+<summary>Usage</summary>
 
 - database indexing and search
 - Huffman coding algorithm (file compression)
@@ -196,28 +267,28 @@ Example
   - Array O(1)
   - BST O(log n)
 
+</details>
+
 ## Hash table
 
 ![](assets/hash2.jpg)
 
-<details>
-<summary>Implementation</summary>
-
-![](assets/hash.jpg)
-
-Example
-
 ```js
 const hashTable = {
   keyMap: [
-    null, 
-    [['Sue', 'F'], ['Nell', 'F']], 
+    null,
+    [['Sue', 'F'], ['Nell', 'F']],
     null,
     [['Joe', 'M'], ['Ally', 'F'], ['Bob', 'M']],
     [['Dan', 'M']]
   ];
 }
 ```
+
+<details>
+<summary>Implementation</summary>
+
+![](assets/hash.jpg)
 
 ```js
 class HashTable {
@@ -247,17 +318,21 @@ ht.set("Joe", "M");
 
 </details>
 
-#### Usage
+<details>
+<summary>Usage</summary>
 
 - efficiently lookup without relying on a linear search
 - much faster than `Array` at search, insert, and delete
   - Array O(n)
   - Hash Table O(1)
-- search citizen passport record by ID
+- search in Ski Rent by shoes size
+- search citizen passport deatils by ID
   - Array
     - check every ID starting from `1` untill, let's say, `9999`
   - Hash Table
     - convert `Vladimir Putin` to `1002` and directly access it
+
+</details>
 
 ## Graph
 

@@ -4,7 +4,7 @@
 
 - stateless
 
-  - functions exist independently and can be reused everywhere  
+  - functions exist independently and can be reused everywhere
 
 ## Functional programming
 
@@ -42,8 +42,6 @@
 
 - function that not only accept data, but what to do (function)
 
-## Techniques
-
 ## Currying
 
 - function with N params → function with 1 params
@@ -51,10 +49,10 @@
 - transforms a function that accepts multiple arguments “all at once” into a series of function calls
 
 ```js
-const normal = (a, b, c, d) => a + b + c + d
+const normal = (a, b, c, d) => a + b + c + d;
 
-const curried = (a) => (b) => (c) => (d) => a + b + c + d
-``` 
+const curried = (a) => (b) => (c) => (d) => a + b + c + d;
+```
 
 - useful for FP to have less params for better composition and reuse
 
@@ -63,14 +61,14 @@ const curried = (a) => (b) => (c) => (d) => a + b + c + d
 - example: `log`
 
 ```js
-const normal = (date, message) => alert(`${date} ${message}`)
+const normal = (date, message) => alert(`${date} ${message}`);
 
-const curried = (date) => (message) => alert(`${date} ${message}`)
+const curried = (date) => (message) => alert(`${date} ${message}`);
 
-const logNow = curried('now')
+const logNow = curried("now");
 
-logNow('message');
-``` 
+logNow("message");
+```
 
 ## Partial application
 
@@ -79,10 +77,10 @@ logNow('message');
 - derive new function, with specific behavior, from general function
 
 ```js
-const normal = (a, b, c, d) => a + b + c + d
+const normal = (a, b, c, d) => a + b + c + d;
 
-const partial = normal.bind(null, 1, 2, 3)
-```   
+const partial = normal.bind(null, 1, 2, 3);
+```
 
 ## Memoization
 
@@ -92,17 +90,17 @@ const partial = normal.bind(null, 1, 2, 3)
 
 - params are cache's keys
 
-- improves performance  
+- improves performance
 
 ```js
-const normal = (n) => n * 2; 
+const normal = (n) => n * 2;
 // normal(10);
-```   
+```
 
 ```js
 const memoized = (n) => {
   let cache = {};
-  return function(n) {
+  return function (n) {
     if (n in cache) {
       return cache[n];
     } else {
@@ -110,8 +108,8 @@ const memoized = (n) => {
       cache[n] = answer;
       return answer;
     }
-  }
-}
+  };
+};
 // memoized()(10);
 ```
 
@@ -122,7 +120,10 @@ const memoized = (n) => {
   ```js
   const compose = (f1, f2) => (data) => f1(f2(data));
 
-  compose(param => param + 10, param => param * 10)(10) // 100
+  compose(
+    (param) => param + 10,
+    (param) => param * 10
+  )(10); // 100
   ```
 
 ## Pipe
@@ -132,5 +133,8 @@ const memoized = (n) => {
   ```js
   const pipe = (f1, f2) => (data) => f2(f1(data));
 
-  pipe(param => param + 10, param => param * 10)(10) // 200
+  pipe(
+    (param) => param + 10,
+    (param) => param * 10
+  )(10); // 200
   ```
