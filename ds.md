@@ -138,6 +138,26 @@ class DoublyLinkedList {
 ![](assets/stack.jpg)
 
 ```js
+const stack = {
+  head: {
+    value: 12,
+    next: {
+      value: 99,
+      next: {
+        value: 37,
+        next: null,
+      },
+    },
+  },
+  tail: {
+    value: 37,
+    next: null,
+  },
+  length: 3,
+};
+
+// or
+
 const stack = [12, 99, 37];
 ```
 
@@ -145,10 +165,28 @@ const stack = [12, 99, 37];
 <summary>Implementation</summary>
 
 - via Array
+
 - via Singly Linked List
 
-  - `push()` via `unshift()`
-  - `pop()` via `shift()`
+```js
+import sll from 'SinglyLinkedList';
+
+class Stack {
+  constructor() {
+    this.sll = new SinglyLinkedList();
+  }
+
+
+  push(value) {
+    this.sll.unshift(value);
+  }
+
+  pop() {
+    this.sll.shift();
+  }
+}
+```
+
 
 ![](assets/unshift-shift.gif)
 
@@ -168,16 +206,53 @@ const stack = [12, 99, 37];
 ![](assets/queue.jpg)
 
 ```js
-const queue = [12, 99, 37];
+const stack = {
+  head: {
+    value: 12,
+    next: {
+      value: 99,
+      next: {
+        value: 37,
+        next: null,
+      },
+    },
+  },
+  tail: {
+    value: 37,
+    next: null,
+  },
+  length: 3,
+};
+
+// or
+
+const stack = [12, 99, 37];
 ```
 
 <details>
 <summary>Implementation</summary>
 
 - via Array
+
 - via Singly Linked List
-  - `enqueue()` via `push()`
-  - `dequeue()` via `shift()`
+
+```js
+import sll from 'SinglyLinkedList';
+
+class Stack {
+  constructor() {
+    this.sll = new SinglyLinkedList();
+  }
+  
+  enqueue(value) {
+    this.sll.push(value);
+  }
+
+  dequeue() {
+    this.sll.shift();
+  }
+}
+```
 
 ![](assets/push-shift.gif)
 
