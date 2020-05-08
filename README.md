@@ -26,11 +26,7 @@
 
 - JavaScript types
 
-  - `string`
-  - `number`
-  - `boolean`
-  - `null`
-  - `undefined`
+
   
 - Like about JS
 
@@ -40,3 +36,27 @@
 - How Javascript Engine works
 
 ![](assets/js.gif)
+
+- Call stack
+
+  - to store primitives (and function calls)
+  - use `let` keyword to change memory adress
+
+![](assets/20200508140935.png)
+
+```js
+let myString = 'abc'
+    mystring = 'abcd'
+```
+
+- Memory heap
+
+  - to store non-primitives
+  - use `const` keyword to keep the same memory address, but change value
+
+![](assets/20200508143522.png)
+
+```js
+const myArray = []
+      myArray.push(1)
+```

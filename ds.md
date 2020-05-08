@@ -169,24 +169,22 @@ const stack = [12, 99, 37];
 - via Singly Linked List
 
 ```js
-import sll from 'SinglyLinkedList';
+import SinglyLinkedList from "SinglyLinkedList";
 
 class Stack {
   constructor() {
-    this.sll = new SinglyLinkedList();
+    this.queue = new SinglyLinkedList();
   }
 
-
   push(value) {
-    this.sll.unshift(value);
+    this.queue.unshift(value);
   }
 
   pop() {
-    this.sll.shift();
+    this.queue.shift();
   }
 }
 ```
-
 
 ![](assets/unshift-shift.gif)
 
@@ -237,19 +235,19 @@ const stack = [12, 99, 37];
 - via Singly Linked List
 
 ```js
-import sll from 'SinglyLinkedList';
+import SinglyLinkedList from "SinglyLinkedList";
 
 class Stack {
   constructor() {
-    this.sll = new SinglyLinkedList();
+    this.stack = new SinglyLinkedList();
   }
-  
+
   enqueue(value) {
-    this.sll.push(value);
+    this.stack.push(value);
   }
 
   dequeue() {
-    this.sll.shift();
+    this.stack.shift();
   }
 }
 ```
@@ -406,6 +404,63 @@ ht.set("Joe", "M");
     - check every ID starting from `1` untill, let's say, `9999`
   - Hash Table
     - convert `Vladimir Putin` to `1002` and directly access it
+
+</details>
+
+## Heap
+
+![](assets/20200508154858.png)
+
+```js
+const heap = {
+  arr: [100, 19, 36, 17, 12, 25, 5, 9, 15, 6, 11, 13, 8, 1, 4],
+};
+```
+
+<details>
+<summary>Implementation</summary>
+
+```js
+class MaxBinaryHeap {
+  constructor() {
+    this.arr = [];
+  }
+
+  // bubbleUp, sinkDown
+
+  insert(elem) {
+    // 1. push to the end
+    // 2. compare with parent and if bigger - swap
+    // 3. repeat until root
+  }
+
+  extractMax() {
+    // 1. remove head (max) and put tail (smallest) as new head
+    // 2. compare head with children and with smallest - swap
+    // 3. repeat until no smaller children found
+  }
+}
+
+let heap = new MaxBinaryHeap();
+
+heap.insert(41);
+// insert more
+```
+
+</details>
+
+<details>
+<summary>Usage</summary>
+
+- much faster than `Array` at getting the minimum or the maximum value
+  - Linked List O(n)
+  - Array O(n)
+  - Heap O(1)
+- OS use heaps for scheduling jobs on a priority basis
+- to build Priority Queue
+  - if you have a FastPass ticket you can bypass the entire line
+  - handicapped individuals are taken to the front of the line
+- does not support the searching operations
 
 </details>
 
