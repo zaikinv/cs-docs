@@ -409,11 +409,11 @@ ht.set("Joe", "M");
 
 ## Heap
 
-![](assets/20200508154858.png)
+![](assets/heap.png)
 
 ```js
 const heap = {
-  arr: [100, 19, 36, 17, 12, 25, 5, 9, 15, 6, 11, 13, 8, 1, 4],
+  arr: [100, 19, 36, 17, 12, 25, 5],
 };
 ```
 
@@ -431,13 +431,13 @@ class MaxBinaryHeap {
   insert(elem) {
     // 1. push to the end
     // 2. compare with parent and if bigger - swap
-    // 3. repeat until root
+    // 3. repeat until correct position
   }
 
   extractMax() {
     // 1. remove head (max) and put tail (smallest) as new head
     // 2. compare head with children and with smallest - swap
-    // 3. repeat until no smaller children found
+    // 3. repeat until correct position
   }
 }
 
@@ -461,6 +461,57 @@ heap.insert(41);
   - if you have a FastPass ticket you can bypass the entire line
   - handicapped individuals are taken to the front of the line
 - does not support the searching operations
+
+</details>
+
+## Priority queue
+
+![](assets/pqueue.png)
+
+```js
+const priorityQueue = {
+  arr: [
+    {
+      value: "Breath",
+      priority: 100,
+    },
+    {
+      value: "Eat",
+      priority: 19,
+    },
+    {
+      value: "Drink",
+      priority: 36,
+    },
+    {
+      value: "Sleep",
+      priority: 17,
+    },
+    {
+      value: "Read",
+      priority: 12,
+    },
+    {
+      value: "Speak",
+      priority: 25,
+    },
+    {
+      value: "Pray",
+      priority: 5,
+    },
+  ],
+};
+```
+
+<details>
+<summary>Implementation</summary>
+
+</details>
+
+<details>
+<summary>Usage</summary>
+
+- 
 
 </details>
 
