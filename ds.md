@@ -506,19 +506,73 @@ const priorityQueue = {
 <details>
 <summary>Implementation</summary>
 
+```js
+class Node {
+  constructor(val, priority) {
+    this.val = val;
+    this.priority = priority;
+  }
+}
+
+class MaxPriorityQueue {
+  constructor() {
+    this.arr = [];
+  }
+
+  // same as max/min heap...
+}
+
+let queue = new MaxPriorityQueue();
+
+queue.enqueue("Breath", 100);
+// add more...
+```
+
 </details>
 
 <details>
 <summary>Usage</summary>
 
-- 
+- OS processes
+- Insertion and removal O (log n) - binary tree, logarithmic number of comparisons
+- Search O(n) - not designed for search
 
 </details>
 
 ## Graph
 
-| Adjacency List                     | Adjacency Matrix                   |
-| ---------------------------------- | ---------------------------------- |
-| Less space                         | More space                         |
-| Fast to iterate over all edges     | Slow to iterate over all edges     |
-| Slow to lookup for a specific edge | Fast to lookup for a specific edge |
+![](assets/20200510103948.png)
+
+```js
+const graph = {
+  adjList: {
+    A: ["B", "C"],
+    B: ["A", "D"],
+    C: ["A", "E"],
+    D: ["B", "E", "F"],
+    E: ["C", "D", "F"],
+    F: ["D", "E"],
+  },
+};
+```
+
+<details>
+<summary>Implementation</summary>
+
+```js
+class Graph {
+  constructor() {
+    this.adjList = {};
+  }
+
+  // addVertex, addEdge, removeEdge, removeVertex
+  // dfs, bfs
+}
+
+let g = new Graph();
+
+g.addVertex("A");
+// add more...
+```
+
+</details>

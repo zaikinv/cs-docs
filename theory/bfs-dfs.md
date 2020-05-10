@@ -10,7 +10,7 @@
 ![](../assets/bfs.gif)
 
 ```js
-bfs(tree) {
+function bfs(tree) {
 
   let node = tree.root;  
   const result = [];
@@ -36,13 +36,6 @@ bfs(tree) {
   return result;
 
 }
-
-var tree = new BinarySearchTree(
-
-tree.insert(10
-// insert more...
-
-tree.bfs()
 ```
 
 #### Usage
