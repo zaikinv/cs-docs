@@ -5,6 +5,7 @@
 - based on Queue
 - can be applied to any Binary Tree
   - because of `node.left` and `node.right`
+- best for deep tree 
 
 ![](../assets/bfs.gif)
 
@@ -75,15 +76,12 @@ function bfs(start) {
 }
 ```
 
-#### Usage
-
-- best for deep tree
-
 ## DFS
 
 💡 we add all left nodes recursively downwards and add new recursive calls to callstack, when bottom reached, javascript will pop last item from the callstack
 
 - based on stack (last in — first out)
+- best for wide tree
 
 ![](../assets/preorder.gif)
 
@@ -174,7 +172,3 @@ function dfs(start) {
   return result;
 }
 ```
-
-#### Usage
-
-- best for wide tree
