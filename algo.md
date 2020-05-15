@@ -185,3 +185,55 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
   return arr;
 }
 ```
+
+## Radix sort
+
+organise numbers based on current digit (right to left) that many times, how many digits in longest number
+
+![](assets/radix.gif)
+
+```js
+function getDigit(num, i) {
+  // num = 9852
+  // i = 0
+  return 2;
+}
+
+function digitCount(num) {
+  // num = 9852
+  return 4;
+}
+
+function mostDigits(nums) {
+  // nums = [23,345,12,9852] 
+  return 4;
+}
+
+function radixSort(nums) {
+  // nums = [23,345,12,9852]
+
+  let maxDigitCount = mostDigits(nums);
+  // maxDigitCount = 4
+
+  for (let k = 0; k < maxDigitCount; k++) {
+    // k = 0
+
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    // digitBuckets = [[],[],[],[],[],[],[],[],[],[]]
+
+    for (let i = 0; i < nums.length; i++) {
+      
+      let digit = getDigit(nums[i], k);
+      // digit = 3
+
+      digitBuckets[digit].push(nums[i]);
+
+    }
+
+    // digitBuckets = [[],[12, 9852],[],[23],[],[345],[],[],[],[]]
+
+    nums = [].concat(...digitBuckets);
+  }
+  return nums;
+}
+```
