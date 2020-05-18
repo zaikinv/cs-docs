@@ -55,7 +55,27 @@ class SinglyLinkedList {
 <summary>Usage</summary>
 
 - build Stack and Queue
-- undo functionality in programs
+
+- solve the issue of static arrays
+
+  _back in history, Linked Lists were created to solve the issue of static arrays, where size (and therefore memory) must be allocated at compile time, which in the case of Linked Lists grows dynamicaly at runtime_
+
+- undo functionality with no jump-overs
+
+  _use when you want to gurarntee an order, without possibility to jump over (editing history in Photoshop, browser history)_
+
+- order-sensitive data  
+
+  _voicemails_
+
+</details>
+
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
 
 </details>
 
@@ -128,8 +148,17 @@ class DoublyLinkedList {
 <details>
 <summary>Usage</summary>
 
-- browser history
+- see [Singly linked list](#Singly-linked-list)
 - undo and redo functionality in programs
+
+</details>
+
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
 
 </details>
 
@@ -199,6 +228,15 @@ class Stack {
 
 </details>
 
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
+
+</details>
+
 ## Queue
 
 ![](assets/queue.jpg)
@@ -260,6 +298,15 @@ class Stack {
 <summary>Usage</summary>
 
 - printing
+
+</details>
+
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
 
 </details>
 
@@ -342,6 +389,15 @@ class BinarySearchTree {
 
 </details>
 
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
+
+</details>
+
 ## Hash table
 
 ![](assets/hash2.jpg)
@@ -407,6 +463,15 @@ ht.set("Joe", "M");
 
 </details>
 
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
+
+</details>
+
 ## Heap
 
 ![](assets/heap.png)
@@ -461,6 +526,15 @@ heap.insert(41);
   - if you have a FastPass ticket you can bypass the entire line
   - handicapped individuals are taken to the front of the line
 - does not support the searching operations
+
+</details>
+
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
 
 </details>
 
@@ -539,6 +613,15 @@ queue.enqueue("Breath", 100);
 
 </details>
 
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
+
+</details>
+
 ## Graph
 
 ![](assets/20200510103948.png)
@@ -574,5 +657,14 @@ let g = new Graph();
 g.addVertex("A");
 // add more...
 ```
+
+</details>
+
+<details>
+<summary>Complexity</summary>
+
+![](assets/20200518124452.png)
+
+**N/A** - you could pick the i-th element in the underlying array, that would have no meaning at all
 
 </details>
