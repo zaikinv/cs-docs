@@ -455,11 +455,6 @@ ht.set("Joe", "M");
   - Array O(n)
   - Hash Table O(1)
 - search in Ski Rent by shoes size
-- search citizen passport deatils by ID
-  - Array
-    - check every ID starting from `1` untill, let's say, `9999`
-  - Hash Table
-    - convert `Vladimir Putin` to `1002` and directly access it
 
 </details>
 
