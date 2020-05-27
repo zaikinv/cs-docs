@@ -8,6 +8,8 @@
 
   - [Algorithms](algo.md)
 
+  - [Advanced](advanced.md)
+
   - [Data structures](ds.md)
 
     - [BFS, DFS](theory/bfs-dfs.md)
