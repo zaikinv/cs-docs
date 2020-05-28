@@ -12,8 +12,6 @@
 
   - [Data structures](ds.md)
 
-    - [BFS, DFS](theory/bfs-dfs.md)
-
 - All you need to know about
 
   - [Core concepts](theory/core.md) (Global scope, Static scope, Dynamic scope, Closure, Hoisting, IIFE, `this`, `call`, `bind`, `apply`)
