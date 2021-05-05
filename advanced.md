@@ -303,6 +303,9 @@ countOverlapIntervals([
 
 Optimizes by breaking down into simpler versions of itself.
 
+<details>
+<summary>Example</summary>
+
 ```js
 function conquer(left, right) {
   let prefix = "";
@@ -335,6 +338,8 @@ function longestCommonPrefix(strings) {
   return conquer(left, right);
 }
 ```
+
+</details>
 
 ## Dynamic programming
 

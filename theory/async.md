@@ -91,7 +91,7 @@ async function sequence() {
 sequence().then(console.log);
 ```
 
-### Reduce all even if one failed
+### Reduce all promises even if one failed
 
 ```js
 promises
@@ -102,9 +102,11 @@ promises
   .then(() => {
     // all done with or without errors
   });
+```
 
-// or
+### Reduce all data even if one failed
 
+```js
 const someAsyncFunction = (item) => Promise.resovle(item);
 
 data
