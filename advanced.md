@@ -4,13 +4,12 @@ We add nodes that we have discovered — but not yet visited — to our queue, a
 
 - based on Queue
 - can be applied to any Binary Tree
-- best for deep tree 
+- best for deep tree
 
 <details>
 <summary>Example</summary>
 
-
-![](../assets/bfs.gif)
+![](assets/bfs.gif)
 
 #### Binary search tree
 
@@ -43,7 +42,7 @@ function bfs(tree) {
 
 #### Graph
 
-![](../assets/20200510103948bfs.png)
+![](assets/20200510103948bfs.png)
 
 ```js
 function bfs(start) {
@@ -91,7 +90,7 @@ We add all left nodes recursively downwards and add new recursive calls to calls
 <details>
 <summary>Example</summary>
 
-![](../assets/preorder.gif)
+![](assets/preorder.gif)
 
 #### Binary search tree
 
@@ -120,7 +119,7 @@ function dfs(tree) {
 
 #### Graph
 
-![](../assets/20200510103948dfs.png)
+![](assets/20200510103948dfs.png)
 
 ```js
 function dfs(start) {
@@ -232,7 +231,6 @@ function restoreIpAddresses(originalString) {
         // ["2", "5", "5"]
         // ["2", "5", "5"]
         tempArr.pop();
-
       }
     }
   }
@@ -305,6 +303,39 @@ countOverlapIntervals([
 
 Optimizes by breaking down into simpler versions of itself.
 
+```js
+function conquer(left, right) {
+  let prefix = "";
+  let index = 0;
+
+  while (
+    left[index] === right[index] &&
+    index < left.length &&
+    index < right.length
+  ) {
+    prefix = prefix + left[index];
+    index++;
+  }
+
+  return prefix;
+}
+
+function longestCommonPrefix(strings) {
+  // base case
+  if (strings.length === 1) return strings[0];
+
+  // find center
+  const center = Math.floor(items.length / 2);
+
+  // divide
+  const left = longestCommonPrefix(items.slice(0, center));
+  const right = longestCommonPrefix(items.slice(center, items.length));
+
+  // conquer
+  return conquer(left, right);
+}
+```
+
 ## Dynamic programming
 
 Optimizes by caching solutions.
@@ -343,13 +374,13 @@ function fib(n, memo = []) {
 /*
  *  Tabulated
  */
-function fib(n){
-    if(n <= 2) return 1;
-    var fibNums = [0,1,1];
-    for(var i = 3; i <= n; i++){
-        fibNums[i] = fibNums[i-1] + fibNums[i-2];
-    }
-    return fibNums[n];
+function fib(n) {
+  if (n <= 2) return 1;
+  var fibNums = [0, 1, 1];
+  for (var i = 3; i <= n; i++) {
+    fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
+  }
+  return fibNums[n];
 }
 ```
 

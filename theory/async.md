@@ -54,7 +54,7 @@ async function parallel() {
   return `${output1}, ${output2}, ${output3}`;
 }
 
-parallel().then(console.log)
+parallel().then(console.log);
 ```
 
 ## Race
@@ -72,10 +72,12 @@ async function race() {
   return `${output}`;
 }
 
-race().then(console.log)
+race().then(console.log);
 ```
 
 ## Sequence
+
+### Async / await
 
 ```js
 async function sequence() {
@@ -86,5 +88,31 @@ async function sequence() {
   return `${output1}, ${output2}, ${output3}`;
 }
 
-sequence().then(console.log)
+sequence().then(console.log);
+```
+
+### Reduce all even if one failed
+
+```js
+promises
+  .reduce(
+    (promise, loadTask) => promise.finally(() => loadTask()),
+    Promise.resolve()
+  )
+  .then(() => {
+    // all done with or without errors
+  });
+
+// or
+
+const someAsyncFunction = (item) => Promise.resovle(item);
+
+data
+  .reduce(
+    (acc, item) => acc.finally(() => someAsyncFunction(item)),
+    Promise.resolve()
+  )
+  .then(() => {
+    // all done with or without errors
+  });
 ```

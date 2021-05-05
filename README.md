@@ -19,15 +19,12 @@
   - [Prototypal inheritance and OOP](theory/oop-proto-inheritance.md)
 
   - [Functional Programming](theory/fp.md)
-  
+
   - [Asynchronous programming](theory/async.md)
-  
+
   - [Modules](theory/modules.md)
 
 - JavaScript types
-
-
-  
 - Like about JS
 
   - can do both FP and OOP (Haskell + Java)
@@ -45,8 +42,8 @@
 ![](assets/20200508140935.png)
 
 ```js
-let myString = 'abc'
-    mystring = 'abcd'
+let myString = "abc";
+mystring = "abcd";
 ```
 
 - Memory heap
@@ -57,6 +54,6 @@ let myString = 'abc'
 ![](assets/20200508143522.png)
 
 ```js
-const myArray = []
-      myArray.push(1)
+const myArray = [];
+myArray.push(1);
 ```
