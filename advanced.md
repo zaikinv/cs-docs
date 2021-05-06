@@ -323,9 +323,9 @@ function conquer(left, right) {
   return prefix;
 }
 
-function longestCommonPrefix(strings) {
+function longestCommonPrefix(items) {
   // base case
-  if (strings.length === 1) return strings[0];
+  if (items.length === 1) return items[0];
 
   // find center
   const center = Math.floor(items.length / 2);
@@ -335,7 +335,8 @@ function longestCommonPrefix(strings) {
   const right = longestCommonPrefix(items.slice(center, items.length));
 
   // conquer
-  return conquer(left, right);
+  const winner = conquer(left, right)
+  return winner;
 }
 ```
 
