@@ -481,30 +481,84 @@ const heap = {
 <summary>Implementation</summary>
 
 ```js
-class MaxBinaryHeap {
+class MaxHeap {
   constructor() {
-    this.arr = [];
+    this.heap = [];
   }
 
-  // bubbleUp, sinkDown
-
-  insert(elem) {
-    // 1. push to the end
-    // 2. compare with parent and if bigger - swap
-    // 3. repeat until correct position
+  getLeftChildIndex(i) {
+    return i * 2 + 1;
   }
 
-  extractMax() {
-    // 1. remove head (max) and put tail (smallest) as new head
-    // 2. compare head with children and with smallest - swap
-    // 3. repeat until correct position
+  getRightChildIndex(i) {
+    return i * 2 + 2;
+  }
+
+  getParentIndex(i) {
+    return Math.floor((i - 1) / 2);
+  }
+
+  swap(i1, i2) {
+    [this.heap[i1],this.heap[i2]] = [this.heap[i2], this.heap[i1]];
+  }
+
+  add(value) {
+    this.heap.push(value);
+    this.bubbleUp();
+  }
+
+  remove() {
+    // replace top with last
+    this.heap[0] = this.heap.pop();
+
+    // re-heapify
+    this.sinkDown();
+  }
+
+  bubbleUp() {
+    let currentIndex = this.heap.length - 1;
+
+    // until out current is bigger than parent, we need to swap them
+    while (this.heap[currentIndex] > this.heap[this.getParentIndex(currentIndex)]) {
+      this.swap(currentIndex, this.getParentIndex(currentIndex));
+
+      // update current index to repeat
+      currentIndex = this.getParentIndex(currentIndex);
+    }
+  }
+
+  sinkDown() {
+    let currentIndex = 0;
+
+    // as long as we have left child
+    while (this.heap[this.getLeftChildIndex(currentIndex)] !== undefined) {
+
+      /********* START - find biggest child *********/
+      
+      // check left
+      let biggestChildIndex = this.getLeftChildIndex(currentIndex);
+
+      // check right
+      if (this.heap[this.getRightChildIndex(currentIndex)] !== undefined
+        && (this.heap[this.getRightChildIndex(currentIndex)] > this.heap[this.getLeftChildIndex(currentIndex)])) {
+        biggestChildIndex = this.getRightChildIndex(currentIndex);
+      }
+
+      /********* END - find biggest child *********/
+
+      // replace current with biggest child
+      if (this.heap[currentIndex] < this.heap[biggestChildIndex]) {
+        this.swap(currentIndex, biggestChildIndex);
+        
+        // update current index to repeat
+        currentIndex = biggestChildIndex;
+      } else {
+        return;
+      }
+      
+    }
   }
 }
-
-let heap = new MaxBinaryHeap();
-
-heap.insert(41);
-// insert more
 ```
 
 </details>
