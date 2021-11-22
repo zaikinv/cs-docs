@@ -503,11 +503,19 @@ class MaxHeap {
   }
 
   add(value) {
+    // 1. push to the end
+    // 2. compare with parent and if bigger - swap
+    // 3. repeat until correct position
+  
     this.heap.push(value);
     this.bubbleUp();
   }
 
   remove() {
+    // 1. remove head (max) and put tail (smallest) as new head
+    // 2. compare head with children and with smallest - swap
+    // 3. repeat until correct position
+  
     // replace top with last
     this.heap[0] = this.heap.pop();
 
