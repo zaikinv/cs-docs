@@ -149,6 +149,26 @@ function mergeSort(arr) {
 function swap(arr, i, j) {
   [arr[i], arr[j]] = [arr[j], arr[i]];
 }
+
+function getPartitiionIndex(arr, i, j) {
+  const pivot = arr[Math.floor((i + j) / 2)];
+  while (i <= j) {
+    while (arr[i] < pivot) {
+      // left is in correct position
+      i++;
+    }
+    while (arr[j] > pivot) {
+      // right is in correct position
+      j--;
+    }
+    if (i <= j) {
+      swap(arr, i, j);
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
 ```
 
 ![](assets/quick.gif)
@@ -175,14 +195,37 @@ function pivot(arr, left, right) {
 recursively apply to parts before and after pivot element checking if `start` < `end`
 
 ```js
-function quickSort(arr, start = 0, end = arr.length - 1) {
-  if (start < end) {
-    let pivotIndex = pivot(arr, start, end);
-    quickSort(arr, start, pivotIndex - 1);
-    quickSort(arr, pivotIndex + 1, end);
+function quickSort(arr, left, right) {
+  if (left < right) {
+  
+    const pivot = getPartitiionIndex(arr, left, right);
+    
+    quickSort(arr, left, pivot - 1);
+    quickSort(arr, pivot + 1, right);
+  }
+  return arr;
+}
+```
+
+## Quick select
+
+```js
+function quickSelect(arr, left, right, k) {
+  if (left === right) {
+    return arr[left];
   }
 
-  return arr;
+  const pivot = getPartitiionIndex(arr, left, right);
+
+  if (pivot === k) {
+    return arr[pivot];
+  }
+ 
+  if (pivot > k) {
+    return quickSelect(arr, k, left, pivot - 1);
+  } else {
+    return quickSelect(arr, k, pivot + 1, right);
+  }
 }
 ```
 
