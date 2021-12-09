@@ -94,24 +94,19 @@ We add all left nodes recursively downwards and add new recursive calls to calls
 
 #### Binary search tree
 
-```js
-function dfs(tree) {
+```js 
+function traverseInOrder(tree) {
   const result = [];
 
-  function traverse(node) {
-    // stack = [traverse(4)]
-    result.push(node.value);
-    // result = [4]
-    // result = [4, 2]
-    // result = [4, 2, 1]
-    if (node.left) traverse(node.left);
-    // stack = [traverse(4), traverse(2)]
-    // stack = [traverse(4), traverse(2), traverse(1)]
-    if (node.right) traverse(node.right);
-    // stack = [traverse(4), traverse(2)]
+  function dfs(node) {
+    if (node) {
+      if (node.left) dfs(node.left);
+      result.push(node.value);
+      if (node.right) dfs(node.right);
+    }
   }
 
-  traverse(tree.root);
+  dfs(tree.root);
 
   return result;
 }
