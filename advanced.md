@@ -14,29 +14,30 @@ We add nodes that we have discovered — but not yet visited — to our queue, a
 #### Binary search tree
 
 ```js
-function bfs(tree) {
-  let node = tree.root;
-  const result = [];
-  const queue = [node];
-  // queue = [1]
-  // result = []
+function bfs(root) {
+    // init
+    const queue = [];
+    const visited = [];
 
-  while (queue.length) {
-    node = queue.shift();
-    // queue = []
-    // result = [] - not yet fully visited
-    if (node.left) queue.push(node.left);
-    // queue = [2] - add new target to visit
-    // result = [] - not yet fully visited
-    if (node.right) queue.push(node.right);
-    // queue = [2, 3] - add new target to visit
-    // result = [] - not yet fully visited
-    result.push(node.value);
-    // queue = [2, 3]
-    // result = [1] - visited!
-  }
+    // add root
+    queue.push(root);
 
-  return result;
+    // as long as we have queue
+    while (queue.length) {
+
+        // deque
+        const node = queue.shift();
+
+        // add to visited
+        visited.push(node.value);
+
+        // enque children
+        if (node.left) queue.push(node.left);
+        if (node.right) queue.push(node.right);
+
+    }
+
+    return visited;
 }
 ```
 
