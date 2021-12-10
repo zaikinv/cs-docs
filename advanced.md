@@ -41,6 +41,54 @@ function bfs(root) {
 }
 ```
 
+Level by level:
+    
+```js    
+function bfsLevelByLevel(root) {
+
+    // init
+    const queue = [];
+    const levels = [];
+
+    // add root
+    queue.push(root);
+
+    // as long as we have queue
+    while (queue.length) {
+
+        // current level
+        const level = [];
+
+        // keep original length
+        const queueLength = queue.length
+    
+        //////////////// LEVEL ////////////////
+
+        for (let i = 0; i < queueLength; i++) {
+
+            // deque
+            const node = queue.shift();
+
+            // enque children
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+
+            // add to level
+            level.push(node.value);
+
+        }
+
+        //////////// END OF LEVEL ////////////
+
+        // add to levels
+        levels.push(level);
+
+    }
+
+    return levels;
+}    
+```
+                                        
 #### Graph
 
 ![](assets/20200510103948bfs.png)
