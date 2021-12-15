@@ -368,6 +368,23 @@ class BinarySearchTree {
    * preOrder, postOrder, inOrder
    * /
 }
+  
+function buildTree(depth, word) {
+  // create null pointers on ends
+  if (depth === 0) return null;
+
+  // create root
+  const node = new Node(depth);
+
+  // create left
+  node.left = buildTree(depth-1, 'left');
+
+  // create right
+  node.right = buildTree(depth-1, 'right');
+
+  // retrun the tree
+  return node;
+}
 ```
 
 ![](assets/search-create-bst.jpg)
